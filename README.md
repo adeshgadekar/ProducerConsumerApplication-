@@ -14,13 +14,13 @@ A simple **Spring Boot** application demonstrating the **Producer-Consumer patte
 
 ### 1. Prerequisites
 - Java 17+
-- Maven
+- Spring Initializer
 - RabbitMQ Server running locally or remotely
 
 ### 2. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd producer-consumer-application
+git clone https://github.com/adeshgadekar/ProducerConsumerApplication-.git
+cd ProducerConsumerApplication-
 ```
 
 ### 3. Start RabbitMQ Server
@@ -34,7 +34,7 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:1567
 ```
 
 ### 4. Run the Application
-```bash
+```
 ./mvnw spring-boot:run
 ```
 
@@ -82,22 +82,40 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:1567
 ```
 src/main/java/com/example/producerconsumer
  ├── config
- │    └── RabbitMQConfig.java
- ├── controller
- │    ├── ProducerController.java
- │    └── ConsumerController.java
- ├── service
- │    ├── ProducerService.java
- │    └── ConsumerService.java
+ │    └── RabbitMQConfig.java 
+ ├── ProducerRequest.java
+ ├── ProducerController.java
+ ├── ConsumerController.java
  └── ProducerConsumerApplication.java
 ```
 
 ---
 
-## Dependencies
-- `spring-boot-starter-web`
-- `spring-boot-starter-amqp`
-- `spring-boot-starter`
+## Dependencies Used
+
+``` xml
+<dependencies>
+    <!-- Spring Boot Starter for REST APIs -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Spring Boot Starter for Testing -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- RabbitMQ Java Client -->
+    <dependency>
+        <groupId>com.rabbitmq</groupId>
+        <artifactId>amqp-client</artifactId>
+        <version>5.25.0</version>
+    </dependency>
+</dependencies>
+```
 
 ---
 
