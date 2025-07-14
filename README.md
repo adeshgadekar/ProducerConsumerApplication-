@@ -25,7 +25,7 @@ cd ProducerConsumerApplication-
 
 ### 3. Start RabbitMQ Server
 - Default Host: `localhost`
-- Default Port: `5672`
+- Default Port: `15672`
 - Default Credentials: `guest/guest`
 
 > You can use Docker to run RabbitMQ:
